@@ -1,0 +1,125 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link href="css/article-definitions.css" rel="stylesheet" type="text/css">
+    <script id="article-snippet" type="text/x-handlebars-template">
+      <div 	class="aStory con-item type{{typeLetter}}  {{readgrey}}" 
+            storyId="{{storyId}}" 
+            storyDate="{{storyDate}}" 
+            storyAuthor="{{storyAuthor}}"
+            style="border-top-color:{{colourLight}};">
+  <div 	class="item item-headline">{{title}}</div>
+  <div class="item item-image">
+  	<img src="http://www.cherwell.org/library/image/{{image}}" width="100%" border="0">
+  </div>
+  <div class="item item-subline">{{description}}</div>
+  <div style="clear:both"></div>
+</div>
+</script>
+<script id="content-article-template" type="text/x-handlebars-template">
+	<div 	class="articleHeadline">{{headline}}</div>
+	<div class="articleAuthor">by {{author}}</div>
+	<div class="articleImage">{{{image}}}</div>
+	<div class="articleDate">{{pubDate}}</div>
+	<div class="articleSubline">{{subline}}</div>	
+	<div class="articleBody"><p style="color:#999999">Loading article from Cherwell. Please make sure you are connected to the internet</p></div>
+	
+  
+</script>
+<script id="section-header-template" type="text/x-handlebars-template">
+<div class="con-item">
+	<div 	id="section-{{sectionID}}" 
+			class="sectionheader" 
+			style="border-top-color:{{sectionColour}};color:{{sectionColour}};">{{sectionTitle}}</div>
+</div>
+</script>
+<script id="more-button-template" type="text/x-handlebars-template">
+<div 	id="more-{{sectionID}}"
+		class="moreBtn con-item">
+		<span 	class="sectionmore"
+				style="	background-color:{{colourLight}};
+						border-color:{{sectionColour}};
+						color:{{sectionColour}}">more {{sectionTitle}}...</span>
+</div>
+</script>
+<script id="fit-college-template" type="text/x-handlebars-template">
+      <div class="contestant-wrap" style=""> 
+        <div class="voteCollege">{{com1.college}}</div>
+		<div class="fitCollegeImage"><img style="{{imageDisplay}}" src="http://www.cherwell.org/library/image/{{com1.image}}"
+		width="240px" height="320px" />
+		<div class="voteBtn" style="{{voteDisplay}}" voteLink="{{com1.voteLink}}{{uuid}}" college="{{com1.college}}">Vote!</div>
+		</div>
+		<div class="voteNames">{{com1.names}}</div><!-- Any HTML content of the first slide goes here -->
+      </div>
+     
+      <div class="contestant-wrap" style=""> 
+        <div class="voteCollege">{{com2.college}}</div>
+		<div class="fitCollegeImage"><img  style="{{imageDisplay}}" src="http://www.cherwell.org/library/image/{{com2.image}}"
+		width="240px" height="320px" />
+		<div class="voteBtn" style="{{voteDisplay}}" voteLink="{{com2.voteLink}}{{uuid}}" college="{{com2.college}}">Vote!</div>
+		</div>
+		<div class="voteNames">{{com2.names}}</div><!-- Any HTML content of the first slide goes here -->
+      </div>
+</script>
+<title>Hello World</title>
+
+
+</head>
+<body>
+<div id="content">
+  <div id="content-article" class="page right"><!--Ready for article--></div>
+  <div id="content-other-page" class="page left"><!--Ready for other things--></div>
+  <div id="content-fit-college" class="page left"><!--Ready for other things--></div>
+  <div id="content-headlines" class="page center">
+    <div class="con-section">
+      <div class="con-item" id="skip-list">
+        <table width="320" border="0" cellspacing="5" cellpadding="3">
+          <tr>
+            <td skipID="79" width="33%" align="center" valign="middle" nowrap bgcolor="#FFFF00">CherwellTV</td>
+            <td skipID="6" width="33%" align="center" valign="middle" nowrap bgcolor="#339900"><span style="color:#FFF">Sport</span></td>
+            <td skipID="29" width="33%" align="center" valign="middle" nowrap bgcolor="#3399CC">Culture</td>
+          </tr>
+          <tr>
+            <td skipID="80" width="33%" align="center" valign="middle" nowrap bgcolor="#FF00FF">Lifestyle</td>
+            <td skipID="1" width="33%" align="center" valign="middle" nowrap bgcolor="#B40000"><span style="color:#FFF">Comment</span></td>
+            <td skipID="23" width="33%" align="center" valign="middle" nowrap bgcolor="#CC6600">Music</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="insert-test"></div>
+    <!--Not displayed-->
+    <div class="con-section" id="insert-placeholder"><!--Ready for the headlines -->
+      <div id="content-loading">Downloading...</div>
+    </div>
+  </div>
+  <div id="header-headlines" class="header center">
+    <div id="updating" class="spinning1"><img src="img/header-arrow.svg" width="30px" height="30px" /></div>
+  </div>
+  <div id="footer-headlines" class="footer center"></div>
+  <div id="header-article" class="header right"></div>
+  <div id="header-fit-college" class="header left"></div>
+  <div id="footer-fit-college" class="footer left"></div>
+</div>
+</div>
+<!-- closes content-headlines -->
+
+</div>
+<!-- closes content --> 
+
+<script type="text/javascript" src="cordova.js"></script> 
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/fastclick.js"></script> 
+<script type="text/javascript" src="js/jquery.animate-enhanced.js"></script>
+<script type="text/javascript" src="js/jquery.dotdotdot-1.5.9.min.js"></script> 
+<script type="text/javascript" src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="js/jquery.xml2json.js"></script> 
+<script type="text/javascript" src="js/handlebars.js"></script> 
+<script type="text/javascript" src="js/index.js"></script> 
+<script type="text/javascript">app.initialize();</script>
+</body>
+</html>

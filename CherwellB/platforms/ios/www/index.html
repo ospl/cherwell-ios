@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi"/>
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link href="css/article-definitions.css" rel="stylesheet" type="text/css">
+<script id="article-snippet" type="text/x-handlebars-template">
+      <div 	class="aStory con-item type{{typeLetter}}  {{readgrey}}" 
+            storyId="{{storyId}}" 
+            storyDate="{{storyDate}}" 
+            storyAuthor="{{storyAuthor}}"
+            style="border-top-color:{{colourLight}};">
+  <div 	class="item item-headline">{{title}}</div>
+  <div class="item item-image">
+  	<img src="http://www.cherwell.org/library/image/{{image}}" width="100%" border="0">
+  </div>
+  <div class="item item-subline">{{description}}</div>
+  <div style="clear:both"></div>
+</div>
+</script>
+<script id="content-article-template" type="text/x-handlebars-template">
+	<div class="articleImage">{{{image}}}</div>
+	<div class="articleHeadline">{{headline}}</div>
+	<div class="articleAuthor">by {{author}}</div>
+	<div class="articleDate">{{pubDate}}</div>
+	<div style="clear:both;"></div>
+	<div class="articleSubline">{{subline}}</div>	
+	<div class="articleBody">
+		<p style="color:#999999">Loading article from Cherwell. Please make sure you are connected to the internet</p>
+	</div> 
+</script>
+<script id="section-header-template" type="text/x-handlebars-template">
+<div class="con-item">
+	<div 	id="section-{{sectionID}}" 
+			class="sectionheader" 
+			style="border-bottom-color:{{sectionColour}};color:{{sectionColour}};">{{sectionTitle}}</div>
+</div>
+</script>
+<script id="more-button-template" type="text/x-handlebars-template">
+<div 	id="more-{{sectionID}}"
+		class="moreBtn con-item">
+		<span 	class="sectionmore"
+				style="	background-color:{{colourLight}};
+						border-color:{{sectionColour}};
+						color:{{sectionColour}}">more {{sectionTitle}}</span>
+</div>
+</script>
+
+<script id="fit-college-template" type="text/x-handlebars-template">
+      <p>This week&rsquo;s contestants are:</p>
+	  <div class="contestant-wrap" style=""> 
+        <div class="voteCollege">{{com1.college}}</div>
+		<div class="fitCollegeImage"><img style="{{imageDisplay}}" src="http://www.cherwell.org/library/image/{{com1.image}}"
+		width="240px" height="320px" />
+		<div class="voteBtn" style="{{voteDisplay}}" voteLink="{{com1.voteLink}}{{uuid}}" college="{{com1.college}}">Vote ({{com1.score}})</div>
+		</div>
+		<div class="voteNames">{{com1.names}}</div>
+      </div>
+     
+      <div class="contestant-wrap" style=""> 
+        <div class="voteCollege">{{com2.college}}</div>
+		<div class="fitCollegeImage"><img  style="{{imageDisplay}}" src="http://www.cherwell.org/library/image/{{com2.image}}"
+		width="240px" height="320px" />
+		<div class="voteBtn" style="{{voteDisplay}}" voteLink="{{com2.voteLink}}{{uuid}}" college="{{com2.college}}">Vote ({{com2.score}})</div>
+		</div>
+		<div class="voteNames">{{com2.names}}</div>
+      </div>
+	  
+	<a href="{{adlink}}">
+		<img src="{{imgaddress}}" width="320px" />
+	</a>
+
+</script>
+
+<script id="newsdesk-template" type="text/x-handlebars-template">
+
+</script>
+<script id="advert-template" type="text/x-handlebars-template">
+
+	<a href="{{adlink}}">
+		<img class="mainpagead" src="{{imgaddress}}" width="100%" border="0" />
+	</a>
+
+</script>
+<title>Hello World</title>
+</head>
+<body>
+<div id="content">
+  <div id="content-article" class="page right"><!--Ready for article--></div>
+  <div id="content-social" class="page left">
+    <div id="social-area">
+      <p>Like us on Facebook<br />
+        and follow us on Twitter<br />
+        for the latest news:</p>
+      <p><a class="emailBtns" style="border-width:2px;"
+      		href="https://www.facebook.com/CherwellOnline">Official Facebook</a></p>     
+      <p><a class="emailBtns" style="border-width:2px;"
+      		href="https://twitter.com/Cherwell_Online">Official Twitter - @Cherwell_Online</a></p>
+      <p><a class="emailBtns" href="https://twitter.com/CherwellMusic">Cherwell Culture</a></p>
+      <p><a class="emailBtns" href="https://twitter.com/CherwellStage">Cherwell Stage</a></p>
+      <p><a class="emailBtns" href="https://twitter.com/CherwellMusic">Cherwell Music</a></p>
+      <p><a class="emailBtns" href="https://twitter.com/CherwellFilmTV">Cherwell Film & TV</a></p>
+      <p><a class="emailBtns" href="https://twitter.com/annaleszkie">Anna Leszkiewicz - Editor</a></p>
+      <p><a class="emailBtns" href="https://twitter.com/nickfthilton">Nick Hilton - Editor</a></p>
+    </div>
+  </div>
+  <div id="content-fit-college" class="page left"><p>Loading...</p></div>
+  <div id="content-newsdesk" class="page left">
+    <div id="newsdesk-area">
+      <p>Write directly to our journalists with your news, pictures, tip-offs and requests. Your email will be treated in the strictest confidence.</p>
+      <p>These links will open the Mail app. For a quick response, please include a phone number.</p>
+      <p><a class="emailBtns"  style="border-width:2px;"
+      		href="mailto:news@cherwell.org?subject=Message%20from%20iOS%20app">
+            Main newsdesk</a><br/><br/>(for time-sensitive news)</p>
+      <p><a class="emailBtns"
+      		href="mailto:culture@cherwell.org?subject=Message%20from%20iOS%20app">
+            Culture team</a></p>
+      <p><a class="emailBtns"
+      		href="mailto:sport@cherwell.org?subject=Message%20from%20iOS%20app">
+            Sport team</a></p>
+      <p><a class="emailBtns"
+      		href="mailto:cherwelllifestyle@gmail.com?subject=Message%20from%20iOS%20app">
+            Lifestyle team</a></p>
+      <p><a class="emailBtns"
+      		href="mailto:cherwellstage@gmail.com?subject=Message%20from%20iOS%20app">
+            Stage team</a></p>
+      <p><a class="emailBtns"
+      		href="mailto:filmandtv@cherwell.org?subject=Message%20from%20iOS%20app">
+            Film and TV team</a></p>
+      <p><a class="emailBtns"
+      		href="mailto:cherwellmusic@gmail.com?subject=Message%20from%20iOS%20app">
+            Music team</a></p>
+      <p><a class="emailBtns"
+      		href="mailto:cherwellfashion@gmail.com?subject=Message%20from%20iOS%20app">
+            Fashion team</a></p>
+      <p><a class="emailBtns"
+      		href="mailto:broadcasting@cherwell.org?subject=Message%20from%20iOS%20app">
+            Broadcasting team</a></p>
+      <p><a class="emailBtns"
+      		href="mailto:cherwellartsandbooks@gmail.com?subject=Message%20from%20iOS%20app">
+            Arts and Books team</a></p>
+      <p><a class="emailBtns"
+      		href="mailto:comment@cherwell.org?subject=Message%20from%20iOS%20app">
+            Comment team</a></p>
+      <p><a class="emailBtns"
+      		href="mailto:editorial@cherwell.org?subject=Message%20from%20iOS%20app">
+            Editorial team</a></p>
+      <p><a class="emailBtns"
+      		href="mailto:editor@cherwell.org?subject=Message%20from%20iOS%20app">
+            Editors</a></p>
+      <p><br/><br/>The Cherwell apps were developed by Patrick Beardmore (iOS), Sarab Sethi (Android), Adam Hadley and Max Bossino.</p>
+      <p><a class="emailBtns"
+      		href="mailto:cherwellapp@gmail.com?subject=Message%20from%20iOS%20app">
+            iPhone app bugs</a></p>
+      <p><br/><br/><i>Cherwell is the independent student newspaper of Oxford University, founded in 1920 by Cecil Binney and George Edinger.</i></p>
+            
+      </div>
+  </div>
+  <div id="content-headlines" class="page center">
+    
+    <div id="insert-test"><!--DoNotRemove--></div>
+    <!--Not displayed-->
+    <div class="con-section" id="insert-placeholder"><!--Ready for the headlines -->
+      <div id="content-loading">Downloading...</div>
+    </div>
+  </div>
+  
+  <div id="header-red" class="header center"></div>
+  
+  <div id="header-headlines" class="header center">
+    <div id="updating" class="spinning1"><img src="img/header-arrow.svg" width="30px" height="30px" /></div>
+  </div>
+  <div id="footer-headlines" class="footer center">
+    <div class="clickable-footer" id="clickable-home"></div>
+    <div class="clickable-footer" id="clickable-social"></div>
+    <div class="clickable-footer" id="clickable-fit-college"></div>
+    <div class="clickable-footer" id="clickable-newsdesk"></div>
+  </div>
+  <div id="header-article" class="header right"></div>
+  <div id="header-newsdesk" class="header left"></div>
+  
+  <div id="header-social" class="header left"></div>
+  <div id="header-fit-college" class="header left"></div>
+  <div id="footer-fit-college" class="footer left"></div>
+  
+  
+</div>
+</div>
+<!-- closes content-headlines -->
+
+</div>
+<!-- closes content --> 
+
+<script type="text/javascript" src="cordova.js"></script> 
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/fastclick.js"></script> 
+<!--<script type="text/javascript" src="js/jquery.hammer.min.js"></script>-->
+<script type="text/javascript" src="js/jquery.animate-enhanced.js"></script> 
+<script type="text/javascript" src="js/jquery.dotdotdot-1.5.9.min.js"></script> 
+<script type="text/javascript" src="js/jquery.scrollTo-1.4.3.1-min.js"></script> 
+<script type="text/javascript" src="js/jquery.xml2json.js"></script> 
+<script type="text/javascript" src="js/handlebars.js"></script> 
+<script type="text/javascript" src="js/index.js"></script> 
+<script type="text/javascript">app.initialize();</script>
+</body>
+</html>
